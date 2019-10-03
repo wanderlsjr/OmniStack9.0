@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 const routes = require("./routes");
 
 // GET, POST, PUT, DELETE
@@ -18,6 +20,7 @@ mongoose.connect(
   }
 );
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
